@@ -7,6 +7,7 @@ import del from 'del';
 import sass from 'sass';
 import browserSync, { BrowserSyncInstance, Options } from 'browser-sync';
 import htmlToPdf from 'html-pdf-node';
+import clearModule from 'clear-module';
 import { Config, Task } from './types';
 
 const config: Config = {
@@ -77,8 +78,10 @@ const initServer = (
 };
 
 const compileTemplates = async () => {
-  const { default: data } = await import('./data/data');
-  console.log('@@@ data | ', data.heading);
+  const data = await getData();
+
+  console.log('@@@ data | ', data.heading, Date.now());
+
   return src(config.path.src.templates)
     .pipe(gulpData(data))
     .pipe(
@@ -123,4 +126,11 @@ const generatePdf = (doneFn: Function, port: number) => {
     console.log('The PDF has been created');
     doneFn();
   });
+};
+
+const getData = async () => {
+  const { default: data } = await import(config.path.src.data);
+  clearModule(config.path.src.data);
+
+  return data;
 };
