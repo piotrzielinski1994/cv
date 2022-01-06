@@ -16,11 +16,14 @@ const config: Config = {
       base: './src',
       templates: './src/*.njk',
       styles: './src/styles/*.scss',
+      photo: './data/*.jpg',
+      examplePhoto: './data/photo.example.jpg',
       data: './data/data.ts',
     },
     dist: {
       base: './dist',
       styles: 'styles.css',
+      photo: 'photo.jpg',
       pdf: 'cv.pdf',
     },
   },
@@ -28,6 +31,7 @@ const config: Config = {
 
 task(Task.DEFAULT, () => {
   watch(config.path.src.styles, { ignoreInitial: false }, compileStyles);
+  watch(config.path.src.photo, { ignoreInitial: false }, movePhoto);
   watch(
     [config.path.src.templates, config.path.src.data],
     { ignoreInitial: false },
@@ -92,6 +96,18 @@ const compileStyles = () => {
     .pipe(concat(config.path.dist.styles))
     .pipe(dest(config.path.dist.base))
     .pipe(browserSync.stream());
+};
+
+const movePhoto = () => {
+  del([`${config.path.dist.base}/*.jp*g`]);
+
+  const task = src([config.path.src.photo, `!${config.path.src.examplePhoto}`])
+    .pipe(concat(config.path.dist.photo))
+    .pipe(dest(config.path.dist.base));
+
+  browserSync.reload();
+
+  return task;
 };
 
 const generatePdf = (doneFn: Function, port: number) => {

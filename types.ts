@@ -27,11 +27,14 @@ export interface Config {
       base: string;
       templates: string;
       styles: string;
+      photo: string;
+      examplePhoto: string;
       data: string;
     };
     dist: {
       base: string;
       styles: string;
+      photo: string;
       pdf: string;
     };
   };

@@ -8,7 +8,7 @@ node_modules
 # Data
 data/data.ts
 data/*.jp*g
-data/*.png
+!data/photo.example.jpg
 
 # Dist
 dist

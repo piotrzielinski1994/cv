@@ -5,6 +5,14 @@ nvm use
 npm install
 ```
 
+## Replace example data with the final one
+
+```bash
+// Example commands
+cp ./data/data.example.ts   ./data/data.ts
+cp ./data/photo.example.jpg ./data/photo.jpg
+```
+
 ## Development
 
 ```bash
