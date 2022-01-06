@@ -1,0 +1,41 @@
+{
+  "name": "cv",
+  "version": "1.0.0",
+  "description": "",
+  "main": "pdf.js",
+  "scripts": {
+    "start": "gulp",
+    "pdf": "gulp pdf",
+    "clean": "gulp clean"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/piotrzielinski1994/cv.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/piotrzielinski1994/cv/issues"
+  },
+  "homepage": "https://github.com/piotrzielinski1994/cv#readme",
+  "devDependencies": {
+    "@types/browser-sync": "^2.26.3",
+    "@types/gulp": "^4.0.9",
+    "@types/gulp-concat": "^0.0.33",
+    "@types/gulp-sass": "^5.0.0",
+    "browser-sync": "^2.27.7",
+    "clear-module": "^4.1.2",
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-data": "^1.3.1",
+    "gulp-nunjucks-render": "^2.2.3",
+    "gulp-sass": "^5.1.0",
+    "gulp-typescript": "^6.0.0-alpha.1",
+    "html-pdf-node": "^1.0.8",
+    "sass": "^1.46.0",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.4"
+  }
+}

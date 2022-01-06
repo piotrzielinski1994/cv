@@ -1,0 +1,167 @@
+@import './constants';
+@import './fonts';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-print-color-adjust: exact; //
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: $colorDefault;
+}
+
+body {
+  display: grid;
+  color: $colorDefault;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9pt;
+}
+
+a,
+a:hover,
+a:focus {
+  color: $colorDefault;
+  text-decoration: none;
+}
+
+.page {
+  width: $pageWidth;
+  height: $pageHeight;
+  background: #fff;
+  display: grid;
+  padding: 1cm;
+}
+
+.main-layout {
+  display: grid;
+  grid-template-columns: 2.2fr 5fr;
+  grid-template-areas:
+    'details main'
+    'clause clause';
+  grid-gap: 25pt;
+}
+
+.details {
+  grid-area: details;
+}
+
+.main {
+  grid-area: main;
+}
+
+.title {
+  line-height: 0.75;
+  color: $colorPrimary;
+  font-size: 30pt;
+  font-weight: 800;
+}
+
+.photo {
+  max-width: 100%;
+  margin-inline: auto;
+  border-radius: 3pt;
+  display: block;
+}
+
+.content {
+  display: grid;
+  align-content: start;
+  grid-gap: 25pt;
+}
+
+.clause {
+  grid-area: clause;
+  margin-top: auto;
+  color: $colorSecondary;
+  font-size: 6pt;
+}
+
+.section {
+  display: grid;
+  align-content: start;
+  grid-gap: 15pt;
+
+  &__heading {
+    padding: 12pt $sectionIntendation;
+    border-radius: 3pt;
+    background-color: $colorBg;
+    color: $colorPrimary;
+    font-size: 12pt;
+    font-weight: 600;
+    line-height: 0.75;
+    text-transform: uppercase;
+  }
+
+  &__content {
+    padding-inline: $sectionIntendation;
+    display: grid;
+    grid-gap: 15pt;
+  }
+}
+
+.exp {
+  display: grid;
+  grid-gap: 8pt;
+
+  &__header {
+    display: grid;
+    grid-gap: 3pt;
+  }
+
+  &__date {
+    color: $colorSecondary;
+    font-size: 7pt;
+  }
+
+  &__heading {
+    color: $colorPrimary;
+    font-size: 12pt;
+    font-weight: 500;
+  }
+
+  &__subheading {
+    font-size: 10pt;
+    font-weight: 400;
+  }
+
+  &__additional {
+    font-size: 9pt;
+    font-weight: 400;
+  }
+}
+
+.list {
+  list-style: none;
+  display: grid;
+  grid-gap: 5pt;
+
+  &__item {
+    display: flex;
+
+    &::before {
+      content: '•';
+      margin-right: 5pt;
+    }
+  }
+}
+
+.data {
+  &__key {
+    font-weight: 600;
+  }
+
+  &__value {
+    margin-top: 1pt;
+
+    &:not(:last-of-type) {
+      margin-bottom: 10pt;
+    }
+  }
+}
