@@ -1,0 +1,40 @@
+@mixin font($version, $fontWeight) {
+  font-family: 'Montserrat';
+  src: url('../fonts/Montserrat/Montserrat-#{$version}.ttf') format('truetype');
+  font-weight: $fontWeight;
+}
+
+@font-face {
+  @include font('Thin', 100);
+}
+
+@font-face {
+  @include font('ExtraLight', 200);
+}
+
+@font-face {
+  @include font('Light', 300);
+}
+
+@font-face {
+  @include font('Regular', 400);
+}
+
+@font-face {
+  @include font('Medium', 500);
+}
+
+@font-face {
+  @include font('SemiBold', 600);
+}
+@font-face {
+  @include font('Bold', 700);
+}
+
+@font-face {
+  @include font('ExtraBold', 800);
+}
+
+@font-face {
+  @include font('Black', 900);
+}

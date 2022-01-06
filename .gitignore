@@ -1,3 +1,14 @@
+# Platform and IDE
 .idea
 .DS_Store
-assets/dist
+
+# Dependencies
+node_modules
+
+# Data
+data/data.ts
+data/*.jp*g
+data/*.png
+
+# Dist
+dist
