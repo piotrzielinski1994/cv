@@ -80,8 +80,6 @@ const initServer = (
 const compileTemplates = async () => {
   const data = await getData();
 
-  console.log('@@@ data | ', data.heading, Date.now());
-
   return src(config.path.src.templates)
     .pipe(gulpData(data))
     .pipe(
