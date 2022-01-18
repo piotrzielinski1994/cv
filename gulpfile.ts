@@ -68,6 +68,7 @@ const initServer = (
 ) => {
   browserSync.init(
     {
+      notify: false,
       server: config.path.dist.base,
       ...options,
     },
