@@ -70,6 +70,7 @@ const initServer = (
     {
       notify: false,
       server: config.path.dist.base,
+      port: config.port,
       ...options,
     },
     onInitialized
