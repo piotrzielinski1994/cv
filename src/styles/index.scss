@@ -1,5 +1,4 @@
 @import './constants';
-@import './fonts';
 
 *,
 *::before,
@@ -20,7 +19,7 @@ html {
 body {
   display: grid;
   color: $colorDefault;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat';
   font-size: 9pt;
 }
 
