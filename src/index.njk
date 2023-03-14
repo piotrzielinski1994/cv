@@ -27,8 +27,9 @@
                 <dl class="data">
 
                   {% for data in section.content %}
-                    <dt class="data__key">{{ data.key }}</dt>
+                    <dt class="data__key">{{ data.key | safe }}</dt>
                     <dd class="data__value">{{ data.value | safe  }}</dd>
+                    <span class="data__annotation">{{ data.annotation | safe }}</span>
                   {% endfor %}
 
                 </dl>
@@ -36,7 +37,7 @@
 
             </section>
           {% endfor %}
-
+        
         </aside>
 
         <main class="main content">
@@ -53,9 +54,13 @@
                 {% for subsection in section.content %}
                   <article class="exp">
 
-                    {% if (subsection.date or subsection.heading or subsection.subheading or subsection.additional) %}
+                    {% if (subsection.dates or subsection.heading or subsection.subheading or subsection.additional) %}
                       <header class="exp__header">
-                        {% if subsection.date %} <span class="exp__date">{{ subsection.date }}</span> {% endif %}
+                        {% if subsection.dates %}
+                          {% for subsectionDate in subsection.dates %}
+                            <span class="exp__date">{{ subsectionDate }}</span>
+                          {% endfor %}
+                        {% endif %}
                         {% if subsection.heading %} <h3 class="exp__heading">{{ subsection.heading }}</h3> {% endif %}
                         {% if subsection.subheading %} <span class="exp__subheading">{{ subsection.subheading }}</span> {% endif %}
                         {% if subsection.additional %} <span class="exp__additional">{{ subsection.additional }}</span> {% endif %}
@@ -66,7 +71,9 @@
                       <ul class="list">
 
                         {% for item in subsection.items %}
-                          <li class="list__item">{{ item | safe }}</li>
+                          <li class="list__item">
+                            <span>{{ item | safe }}</span>
+                          </li>
                         {% endfor %}
 
                       </ul>

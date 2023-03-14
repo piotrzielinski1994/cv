@@ -30,6 +30,10 @@ a:focus {
   text-decoration: none;
 }
 
+strong {
+  font-weight: 600;
+}
+
 .page {
   width: $pageWidth;
   height: $pageHeight;
@@ -152,6 +156,11 @@ a:focus {
 }
 
 .data {
+  &__annotation {
+    color: $colorSecondary;
+    font-size: 7pt;
+  }
+
   &__key {
     font-weight: 600;
   }

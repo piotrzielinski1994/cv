@@ -1,23 +1,28 @@
 export interface Data {
   heading: string;
-  sidebar: Array<{
+  sidebar: {
     heading: string;
-    content: Array<{
-      key: string;
-      value: string;
-    }>;
-  }>;
-  main: Array<{
-    heading: string;
-    content: Array<{
-      date?: string;
-      heading?: string;
-      subheading?: string;
-      additional?: string;
-      items?: Array<string>;
-    }>;
-  }>;
+    content: Feature[];
+  }[];
+  main: Section[];
   clause: string;
+}
+
+interface Feature {
+  key: string;
+  value: string;
+  annotation?: string;
+}
+
+interface Section {
+  heading: string;
+  content: {
+    dates?: string[];
+    heading?: string;
+    subheading?: string;
+    additional?: string;
+    items?: string[];
+  }[];
 }
 
 export interface Config {

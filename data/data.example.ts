@@ -61,7 +61,7 @@ const data: Data = {
       heading: 'Experience',
       content: [
         {
-          date: '2021/01/01 - present',
+          dates: ['2021/01 - present'],
           heading: 'Company',
           subheading: 'Position',
           items: [
@@ -77,7 +77,7 @@ const data: Data = {
       heading: 'Education',
       content: [
         {
-          date: '2021/01/01 - 2021/01/01',
+          dates: ['2021/01 - 2021/01'],
           heading: 'Academy',
           subheading: 'Field of study',
           additional: '',
