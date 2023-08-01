@@ -61,9 +61,9 @@
                             <span class="exp__date">{{ subsectionDate }}</span>
                           {% endfor %}
                         {% endif %}
-                        {% if subsection.heading %} <h3 class="exp__heading">{{ subsection.heading }}</h3> {% endif %}
-                        {% if subsection.subheading %} <span class="exp__subheading">{{ subsection.subheading }}</span> {% endif %}
-                        {% if subsection.additional %} <span class="exp__additional">{{ subsection.additional }}</span> {% endif %}
+                        {% if subsection.heading %} <h3 class="exp__heading">{{ subsection.heading | safe }}</h3> {% endif %}
+                        {% if subsection.subheading %} <span class="exp__subheading">{{ subsection.subheading | safe }}</span> {% endif %}
+                        {% if subsection.additional %} <span class="exp__additional">{{ subsection.additional | safe }}</span> {% endif %}
                       </header>
                     {% endif %}
 
