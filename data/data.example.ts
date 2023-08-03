@@ -2,47 +2,49 @@ import { Data } from '../types';
 
 const data: Data = {
   heading: 'Name Surname',
-  sidebar: [
-    {
-      heading: 'Personal',
-      content: [
-        {
-          key: 'E-mail',
-          value: '<a href="mailto:example@example.com">example@example.com</a>',
-        },
-        {
-          key: 'Address',
-          value: 'City, Country',
-        },
-      ],
-    },
-    {
-      heading: 'Languages',
-      content: [
-        {
-          key: 'English',
-          value: 'level',
-        },
-        {
-          key: 'Other',
-          value: 'level',
-        },
-      ],
-    },
-    {
-      heading: 'Links',
-      content: [
-        {
-          key: 'LinkedIn',
-          value: '<a href="https://linkedin.com">linkedin.com</a>',
-        },
-        {
-          key: 'Github',
-          value: '<a href="https://github.com">github.com</a>',
-        },
-      ],
-    },
-  ],
+  sidebar: {
+    sections: [
+      {
+        heading: 'Personal',
+        content: [
+          {
+            key: 'E-mail',
+            value: '<a href="mailto:example@example.com">example@example.com</a>',
+          },
+          {
+            key: 'Address',
+            value: 'City, Country',
+          },
+        ],
+      },
+      {
+        heading: 'Languages',
+        content: [
+          {
+            key: 'English',
+            value: 'level',
+          },
+          {
+            key: 'Other',
+            value: 'level',
+          },
+        ],
+      },
+      {
+        heading: 'Links',
+        content: [
+          {
+            key: 'LinkedIn',
+            value: '<a href="https://linkedin.com">linkedin.com</a>',
+          },
+          {
+            key: 'Github',
+            value: '<a href="https://github.com">github.com</a>',
+          },
+        ],
+      },
+    ]
+  },
   main: [
     {
       heading: 'Skills',

@@ -14,11 +14,31 @@
     <div class="page">
       <div class="main-layout">
 
+        <header class="header">
+          <h1 class="title">{{ heading | safe }}</h1>
+        </header>
+
         <aside class="details content">
 
-          <img class="photo" src="./photo.jpg" />
+          {% if sidebar.summary %}
+            <section class="section">
+            
+              <h2 class="section__heading">{{ sidebar.summary.heading | safe }}</h2>
 
-          {% for section in sidebar %}
+              <div class="section__content">
+                {% for paragraph in sidebar.summary.content %}
+                  <p class="summary__paragraph">{{ paragraph | safe }}</p>
+                {% endfor %}
+              </div>
+
+            </section>
+          {% else %}
+
+            <img class="photo" src="./photo.jpg" />
+
+          {% endif %}
+
+          {% for section in sidebar.sections %}
             <section class="section">
 
               <h2 class="section__heading">{{ section.heading }}</h2>
@@ -41,8 +61,6 @@
         </aside>
 
         <main class="main content">
-
-          <h1 class="title">{{ heading }}</h1>
 
           {% for section in main %}
             <section class="section">
@@ -67,7 +85,8 @@
                       </header>
                     {% endif %}
 
-                    {% if subsection.items.length %}
+                    {% if subsection.items.length > 0 %}
+                    
                       <ul class="list">
 
                         {% for item in subsection.items %}

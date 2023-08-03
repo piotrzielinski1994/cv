@@ -1,28 +1,30 @@
 export interface Data {
   heading: string;
   sidebar: {
-    heading: string;
-    content: Feature[];
-  }[];
-  main: Section[];
+    summary?: Section<string>;
+    sections: Section<FeatureContent>[];
+  };
+  main: Section<DefaultContent>[];
   clause: string;
 }
 
-interface Feature {
+interface Section<T> {
+  heading: string;
+  content: T[];
+}
+
+interface FeatureContent {
   key: string;
   value: string;
   annotation?: string;
 }
 
-interface Section {
-  heading: string;
-  content: {
-    dates?: string[];
-    heading?: string;
-    subheading?: string;
-    additional?: string;
-    items?: string[];
-  }[];
+interface DefaultContent {
+  dates?: string[];
+  heading?: string;
+  subheading?: string;
+  additional?: string;
+  items?: string[];
 }
 
 export interface Config {

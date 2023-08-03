@@ -49,11 +49,16 @@ b {
 
 .main-layout {
   display: grid;
-  grid-template-columns: 2.2fr 5fr;
+  grid-template-columns: 2.4fr 5fr;
   grid-template-areas:
+    'header header'
     'details main'
     'clause clause';
   grid-gap: 25pt;
+}
+
+.header {
+  grid-area: header;
 }
 
 .details {
@@ -69,6 +74,12 @@ b {
   color: $colorPrimary;
   font-size: 30pt;
   font-weight: 800;
+}
+
+.summary {
+  &__paragraph {
+    font-style: italic;
+  }
 }
 
 .photo {
