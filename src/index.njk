@@ -21,6 +21,10 @@
         <aside class="details content">
 
           {% if sidebar.summary %}
+            <img class="photo" src="./photo.jpg" />
+          {% endif %}
+
+          {% if sidebar.summary %}
             <section class="section">
             
               <h2 class="section__heading">{{ sidebar.summary.heading | safe }}</h2>
@@ -32,10 +36,6 @@
               </div>
 
             </section>
-          {% else %}
-
-            <img class="photo" src="./photo.jpg" />
-
           {% endif %}
 
           {% for section in sidebar.sections %}
@@ -47,9 +47,17 @@
                 <dl class="data">
 
                   {% for data in section.content %}
-                    <dt class="data__key">{{ data.key | safe }}</dt>
-                    <dd class="data__value">{{ data.value | safe  }}</dd>
-                    <span class="data__annotation">{{ data.annotation | safe }}</span>
+                    {% if data.values %}
+                      <ul class="list">
+                        {% for value in data.values %}
+                          <li class="list__item">{{ value | safe  }}</li>
+                        {% endfor %}
+                      </ul>
+                    {% else %}
+                      <dt class="data__key">{{ data.key | safe }}</dt>
+                      <dd class="data__value">{{ data.value | safe  }}</dd>
+                      <span class="data__annotation">{{ data.annotation | safe }}</span>
+                    {% endif %}
                   {% endfor %}
 
                 </dl>
@@ -80,23 +88,24 @@
                           {% endfor %}
                         {% endif %}
                         {% if subsection.heading %} <h3 class="exp__heading">{{ subsection.heading | safe }}</h3> {% endif %}
-                        {% if subsection.subheading %} <span class="exp__subheading">{{ subsection.subheading | safe }}</span> {% endif %}
-                        {% if subsection.additional %} <span class="exp__additional">{{ subsection.additional | safe }}</span> {% endif %}
                       </header>
                     {% endif %}
 
-                    {% if subsection.items.length > 0 %}
-                    
-                      <ul class="list">
+                    {% for item in subsection.items %}
+                        {% if item.heading %} <span class="exp__subheading">{{ item.heading | safe }}</span> {% endif %}
 
-                        {% for item in subsection.items %}
-                          <li class="list__item">
-                            <span>{{ item | safe }}</span>
-                          </li>
-                        {% endfor %}
+                        {% if item.bullets.length > 0 %}
+                          <ul class="list">
+                            {% for bullet in item.bullets %}
+                              <li class="list__item">
+                                <span>{{ bullet | safe }}</span>
+                              </li>
+                            {% endfor %}
+                          </ul>
+                        {% endif %}
 
-                      </ul>
-                    {% endif %}
+                        {% if item.additional %} <span class="exp__additional">{{ item.additional | safe }}</span> {% endif %}
+                    {% endfor %}
 
                   </article>
                 {% endfor %}

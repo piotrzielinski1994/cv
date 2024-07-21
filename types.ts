@@ -1,8 +1,9 @@
 export interface Data {
   heading: string;
   sidebar: {
+    image?: string;
     summary?: Section<string>;
-    sections: Section<FeatureContent>[];
+    sections: Section<FeatureContent | Features>[];
   };
   main: Section<DefaultContent>[];
   clause: string;
@@ -19,12 +20,18 @@ interface FeatureContent {
   annotation?: string;
 }
 
+interface Features {
+  values: string[];
+}
+
 interface DefaultContent {
   dates?: string[];
   heading?: string;
-  subheading?: string;
-  additional?: string;
-  items?: string[];
+  items: {
+    heading?: string;
+    bullets?: string[];
+    additional?: string;
+  }[];
 }
 
 export interface Config {
