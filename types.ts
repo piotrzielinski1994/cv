@@ -26,9 +26,15 @@ interface Features {
 
 interface DefaultContent {
   dates?: string[];
-  heading?: string;
+  heading?: {
+    label: string;
+    href?: string;
+  };
   items: {
-    heading?: string;
+    heading?: {
+      label: string;
+      annotation: string;
+    };
     bullets?: string[];
     additional?: string;
   }[];

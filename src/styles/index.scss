@@ -19,7 +19,7 @@ html {
 body {
   display: grid;
   color: $colorDefault;
-  font-family: 'Montserrat';
+  font-family: 'Montserrat', 'Times New Roman', serif;
   font-size: 9pt;
   line-height: 1.25;
 }
@@ -128,6 +128,7 @@ b {
 
 .exp {
   display: grid;
+  justify-items: start;
   grid-gap: 8pt;
 
   &__header {
@@ -148,10 +149,17 @@ b {
 
   &__subheading {
     font-size: 10pt;
-    font-weight: 400;
+    font-weight: 500;
+  }
+
+  &__subheading-annotation {
+    color: $colorSecondary;
+    font-weight: 300;
+    font-size: 7pt;
   }
 
   &__additional {
+    margin-top: -2pt;
     color: $colorSecondary;
     font-size: 7pt;
   }
