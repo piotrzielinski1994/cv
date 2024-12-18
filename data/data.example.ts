@@ -8,12 +8,20 @@ const data: Data = {
         heading: 'Personal',
         content: [
           {
-            key: 'E-mail',
+            key: 'Email',
             value: '<a href="mailto:example@example.com">example@example.com</a>',
           },
+        ],
+      },
+      {
+        heading: 'COMPETENCIES',
+        content: [
           {
-            key: 'Address',
-            value: 'City, Country',
+            values: [
+              'Lorem ipsum dolor sit amet',
+              'Vestibulum suscipit maximus ultricies',
+              'Curabitur tristique',
+            ],
           },
         ],
       },
@@ -31,6 +39,16 @@ const data: Data = {
         ],
       },
       {
+        heading: 'EDUCATION',
+        content: [
+          {
+            key: 'University',
+            value: 'Field of study',
+            annotation: 'Title',
+          },
+        ],
+      },
+      {
         heading: 'Links',
         content: [
           {
@@ -43,46 +61,81 @@ const data: Data = {
           },
         ],
       },
-    ]
+    ],
   },
   main: [
-    {
-      heading: 'Skills',
-      content: [
-        {
-          items: [
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-            'Vestibulum suscipit maximus ultricies. Praesent id odio',
-            'Donec tincidunt urna non nisl commodo maximus',
-            'Curabitur tristique, magna a consectetur tincidunt',
-          ],
-        },
-      ],
-    },
     {
       heading: 'Experience',
       content: [
         {
-          dates: ['2021/01 - present'],
-          heading: 'Company',
-          subheading: 'Position',
+          dates: ['2010/01 - present'],
+          heading: {
+            label: 'Company',
+            href: 'https://example.com',
+          },
           items: [
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-            'Vestibulum suscipit maximus ultricies. Praesent id odio',
-            'Donec tincidunt urna non nisl commodo maximus',
-            'Curabitur tristique, magna a consectetur tincidunt',
+            {
+              heading: {
+                label: 'Project',
+                annotation: '(5 years)',
+              },
+              bullets: [
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+                'Vestibulum suscipit maximus ultricies. Praesent id odio',
+                'Donec tincidunt urna non nisl commodo maximus',
+                'Curabitur tristique, magna a consectetur tincidunt',
+              ],
+              additional: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+            },
+            {
+              heading: {
+                label: 'Project 2',
+                annotation: '(5 years)',
+              },
+              bullets: [
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+                'Vestibulum suscipit maximus ultricies. Praesent id odio',
+                'Donec tincidunt urna non nisl commodo maximus',
+                'Curabitur tristique, magna a consectetur tincidunt',
+              ],
+              additional: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+            },
           ],
         },
-      ],
-    },
-    {
-      heading: 'Education',
-      content: [
         {
-          dates: ['2021/01 - 2021/01'],
-          heading: 'Academy',
-          subheading: 'Field of study',
-          additional: '',
+          dates: ['2000/01 - 2009/12'],
+          heading: {
+            label: 'Company',
+            href: 'https://example.com',
+          },
+          items: [
+            {
+              heading: {
+                label: 'Project',
+                annotation: '(5 years)',
+              },
+              bullets: [
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+                'Vestibulum suscipit maximus ultricies. Praesent id odio',
+                'Donec tincidunt urna non nisl commodo maximus',
+                'Curabitur tristique, magna a consectetur tincidunt',
+              ],
+              additional: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+            },
+            {
+              heading: {
+                label: 'Project',
+                annotation: '(5 years)',
+              },
+              bullets: [
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+                'Vestibulum suscipit maximus ultricies. Praesent id odio',
+                'Donec tincidunt urna non nisl commodo maximus',
+                'Curabitur tristique, magna a consectetur tincidunt',
+              ],
+              additional: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+            },
+          ],
         },
       ],
     },
