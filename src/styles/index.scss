@@ -120,9 +120,14 @@ b {
   }
 
   &__content {
-    padding-inline: $sectionIntendation;
     display: grid;
-    grid-gap: 15pt;
+    // To omit right padding in case I want to prevent breaking text to new line without affecting container width
+    grid-template-columns: $sectionIntendation 1fr minmax(auto, $sectionIntendation);
+    grid-row-gap: 15pt;
+
+    & > * {
+      grid-column: 2;
+    }
   }
 }
 
