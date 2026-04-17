@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { DefaultContent } from '@/types';
+  import type { DefaultContent } from '#/types';
 
   type Props = { content: DefaultContent };
   let { content }: Props = $props();

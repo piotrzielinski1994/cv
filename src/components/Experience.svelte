@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { DefaultContent } from '@/types';
+  import type { DefaultContent } from '#/types';
   import ExperienceHeader from './ExperienceHeader.svelte';
   import ExperienceItem from './ExperienceItem.svelte';
 

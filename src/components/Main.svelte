@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { Section, DefaultContent } from '@/types';
+  import type { Section, DefaultContent } from '#/types';
   import Experience from './Experience.svelte';
 
   type Props = { sections: Section<DefaultContent>[] };

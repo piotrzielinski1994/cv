@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { Features } from '@/types';
+  import type { Features } from '#/types';
 
   type Props = { features: Features };
   let { features }: Props = $props();

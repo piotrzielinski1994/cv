@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { Section } from '@/types';
+  import type { Section } from '#/types';
 
   type Props = { summary: Section<string> };
   let { summary }: Props = $props();

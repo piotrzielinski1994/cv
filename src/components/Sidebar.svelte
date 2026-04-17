@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { Section, FeatureContent, Features } from '@/types';
+  import type { Section, FeatureContent, Features } from '#/types';
   import Photo from './Photo.svelte';
   import Summary from './Summary.svelte';
   import SidebarSection from './SidebarSection.svelte';

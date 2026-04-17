@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { Section, FeatureContent, Features } from '@/types';
+  import type { Section, FeatureContent, Features } from '#/types';
   import FeatureList from './FeatureList.svelte';
   import DataItem from './DataItem.svelte';
 

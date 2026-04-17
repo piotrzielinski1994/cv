@@ -1,6 +1,6 @@
-import App from './App.svelte';
+import data from '#data/data';
 import { mount } from 'svelte';
-import data from '../data/data';
+import App from './App.svelte';
 
 mount(App, {
   target: document.getElementById('app')!,
