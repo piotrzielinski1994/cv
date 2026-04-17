@@ -1,6 +1,19 @@
 {
   "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "strict": true,
     "esModuleInterop": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+    "types": ["node"],
+    "paths": {
+      "@/*": ["./src/*"],
+      "@data/*": ["./data/*"]
+    }
   },
-  "noImplicitAny": false
+  "include": ["src/**/*", "data/**/*"]
 }

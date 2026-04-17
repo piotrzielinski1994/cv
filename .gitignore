@@ -6,8 +6,8 @@
 node_modules
 
 # Data
-data/data.ts
-data/*.jp*g
+data/*
+!data/data.example.ts
 !data/photo.example.jpg
 
 # Dist

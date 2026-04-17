@@ -1,4 +1,4 @@
-import { Data } from '../types';
+import type { Data } from '../src/types';
 
 const data: Data = {
   heading: 'Name Surname',
