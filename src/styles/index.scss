@@ -13,7 +13,7 @@ html {
   min-height: 100vh;
   display: grid;
   place-items: center;
-  background: $colorDefault;
+  background-color: $colorDefault;
 }
 
 body {
@@ -42,7 +42,7 @@ b {
 .page {
   width: $pageWidth;
   height: $pageHeight;
-  background: #fff;
+  background-color: #fff;
   display: grid;
   padding: 1cm;
 }
@@ -55,7 +55,7 @@ b {
     'header header'
     'details main'
     'clause clause';
-  grid-gap: 25pt;
+  gap: 20pt;
 }
 
 .header {
@@ -93,12 +93,12 @@ b {
 .content {
   display: grid;
   align-content: start;
-  grid-gap: 25pt;
+  gap: 20pt;
 }
 
 .clause {
   grid-area: clause;
-  margin-top: auto;
+  margin-top: -10px;
   color: $colorSecondary;
   font-size: 6pt;
 }
@@ -106,7 +106,7 @@ b {
 .section {
   display: grid;
   align-content: start;
-  grid-gap: 15pt;
+  gap: 15pt;
 
   &__heading {
     padding: 12pt $sectionIntendation;
@@ -122,7 +122,7 @@ b {
   &__content {
     display: grid;
     // To omit right padding in case I want to prevent breaking text to new line without affecting container width
-    grid-template-columns: $sectionIntendation 1fr minmax(auto, $sectionIntendation);
+    grid-template-columns: $sectionIntendation 1fr calc($sectionIntendation / 2);
     grid-row-gap: 15pt;
 
     & > * {
@@ -134,11 +134,11 @@ b {
 .exp {
   display: grid;
   justify-items: start;
-  grid-gap: 8pt;
+  gap: 8pt;
 
   &__header {
     display: grid;
-    grid-gap: 3pt;
+    gap: 3pt;
   }
 
   &__date {
@@ -173,7 +173,7 @@ b {
 .list {
   list-style: none;
   display: grid;
-  grid-gap: 5pt;
+  gap: 5pt;
 
   &__item {
     display: flex;
