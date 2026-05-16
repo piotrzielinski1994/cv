@@ -12,6 +12,7 @@ export type Data = {
 export type Section<T> = {
   heading: string;
   content: T[];
+  columns?: number;
 };
 
 export type FeatureContent = {

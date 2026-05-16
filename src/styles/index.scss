@@ -186,6 +186,18 @@ b {
 }
 
 .data {
+  &--multi {
+    display: grid;
+    grid-template-columns: repeat(var(--data-columns, 1), 1fr);
+    grid-template-rows: repeat(2, auto);
+    grid-auto-flow: column;
+    // column-gap: 10pt;
+
+    .data__value:not(:last-of-type) {
+      margin-bottom: 0;
+    }
+  }
+
   &__annotation {
     color: $colorSecondary;
     font-size: 7pt;
