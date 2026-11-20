@@ -2,7 +2,8 @@ import { svelte } from '@sveltejs/vite-plugin-svelte';
 import { defineConfig } from 'vite';
 import { fileURLToPath } from 'node:url';
 
-export default defineConfig({
+export default defineConfig(({ command }) => ({
+  base: command === 'build' ? '/cv/' : '/',
   plugins: [svelte()],
   resolve: {
     alias: [
@@ -13,4 +14,4 @@ export default defineConfig({
   server: {
     port: 8000,
   },
-});
+}));
