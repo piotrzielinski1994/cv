@@ -15,5 +15,5 @@
       "#data/*": ["./data/*"]
     }
   },
-  "include": ["src/**/*", "data/**/*"]
+  "include": ["src/**/*", "data/**/*", "src/**/*.scss", "data/**/*.jpg"]
 }
